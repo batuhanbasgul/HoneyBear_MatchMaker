@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_bottom_likes"
+        android:icon="@drawable/ic_like_white_64"
+        android:title="@string/action_likes_bottom" />
+    <item
+        android:id="@+id/action_bottom_messages"
+        android:icon="@drawable/ic_messages_64"
+        android:title="@string/action_messages" />
+    <item
+        android:id="@+id/action_bottom_matches"
+        android:icon="@drawable/ic_matches_64"
+        android:title="@string/action_matches" />
+</menu>

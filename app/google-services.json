@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "790610295084",
+    "firebase_url": "https://honeybear-matchmaker-default-rtdb.firebaseio.com",
+    "project_id": "honeybear-matchmaker",
+    "storage_bucket": "honeybear-matchmaker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790610295084:android:efa1492f32ca3af37b9489",
+        "android_client_info": {
+          "package_name": "com.honey_bear.honeybear_matchmaker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "790610295084-p7gerdotbe3mfkm0at3hko9isn49plg2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJR1N9Mfhtl7fb2bL3BrvT672OTzN1Yqs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "790610295084-p7gerdotbe3mfkm0at3hko9isn49plg2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

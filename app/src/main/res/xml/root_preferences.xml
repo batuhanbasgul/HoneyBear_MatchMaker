@@ -1,0 +1,23 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:background="@color/background">
+
+    <PreferenceCategory app:title="@string/settings_app">
+
+        <ListPreference
+            app:defaultValue="true"
+            app:entries="@array/settingsEntries"
+            app:entryValues="@array/settingsEntryValues"
+            app:key="search_size"
+            app:summary="@string/settings_search_size_summary"
+            app:title="@string/settings_search_size" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/settings_permissions">
+        <SwitchPreference
+            app:defaultValue="true"
+            app:key="match"
+            app:summary="@string/settings_match_permission_summary"
+            app:title="@string/settings_match_permission" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/menu_general">
+        <menu>
+            <item
+                android:id="@+id/action_navprofile"
+                android:icon="@drawable/ic_profile_64"
+                android:title="@string/action_profile"></item>
+            <item
+                android:id="@+id/action_navinterests"
+                android:icon="@drawable/ic_star_64"
+                android:title="@string/action_interests"></item>
+            <item
+                android:id="@+id/action_navmessages"
+                android:icon="@drawable/ic_messages_64"
+                android:title="@string/action_messages"></item>
+            <item
+                android:id="@+id/action_likes"
+                android:icon="@drawable/ic_like_white_64"
+                android:title="@string/action_likes"></item>
+            <item
+                android:id="@+id/action_liked"
+                android:icon="@drawable/ic_likes_64"
+                android:title="@string/action_liked"></item>
+            <item
+                android:id="@+id/action_being_liked"
+                android:icon="@drawable/ic_being_liked_64"
+                android:title="@string/action_being_liked"></item>
+        </menu>
+    </item>
+
+    <item android:title="@string/menu_settings">
+        <menu>
+            <item
+                android:id="@+id/action_navedit"
+                android:icon="@drawable/ic_edit_64"
+                android:title="@string/action_edit"></item>
+            <item
+                android:id="@+id/action_navsettings"
+                android:icon="@drawable/ic_settings_64"
+                android:title="@string/action_settings"></item>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/action_navlogout"
+        android:icon="@drawable/ic_exit_64"
+        android:title="@string/action_logout"></item>
+</menu>

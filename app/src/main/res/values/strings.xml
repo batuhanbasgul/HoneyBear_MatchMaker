@@ -1,0 +1,452 @@
+
+<resources>
+
+    <string name="facebook_app_id">178641153606683</string>
+    <string name="fb_login_protocol_scheme">fb178641153606683</string>
+
+    <string name="app_name">HoneyBear</string>
+    <string name="title_activity_login">Login</string>
+    <string name="developer">Developed by Batuhan Basgul</string>
+    <string name="coming_soon">Çok Yakında</string>
+    <string name="context_null">null</string>
+    <string name="no_user">Kullanıcı Bulunamadı</string>
+    <string name="loading">Yükleniyor</string>
+
+    //SETTINGS
+    <string-array name="settingsEntries">
+        <item>1 Km</item>
+        <item>2 Km</item>
+        <item>3 Km</item>
+        <item>4 Km</item>
+        <item>5 Km</item>
+        <item>10 Km</item>
+        <item>20 Km</item>
+        <item>30 Km</item>
+        <item>40 Km</item>
+        <item>50 Km</item>
+        <item>100 Km</item>
+    </string-array>
+    <string-array name="settingsEntryValues">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>100</item>
+    </string-array>
+    <string name="settings_search_size">Arama Mesafesi</string>
+    <string name="settings_search_size_summary">Eşleştirme yapılacak alanı belirler.</string>
+    <string name="settings_app">Uygulama Ayarları</string>
+    <string name="settings_permissions">İzinler</string>
+    <string name="settings_match_permission">Eşleştirme İzni</string>
+    <string name="settings_match_permission_summary">Sizin eşleştirme yapabilmenizi veya başka bir kullanıcının eşleşmelerinde görülebilmenizi belirler.</string>
+    <string name="settings_match_error">Bu işlem için uygulama ayarlarından izin vermeniz gerekiyor.</string>
+    <string name="settings_goto_settings">Ayarlara Git</string>
+
+    //NAVIGATION DRAWER
+    <string name="menu_general">Genel</string>
+    <string name="menu_settings">Ayarlar</string>
+    <string name="action_profile">Profil</string>
+    <string name="action_interests">İlgi Alanları</string>
+    <string name="action_matches">Anlık Eşleşmeler</string>
+    <string name="action_messages">Mesajlar</string>
+    <string name="action_edit">Profili Düzenle</string>
+    <string name="action_settings">Uygulama Ayarları</string>
+    <string name="action_logout">Çıkış</string>
+    <string name="action_likes">Beğenmeler</string>
+    <string name="action_liked">Benim Beğendiklerim</string>
+    <string name="action_being_liked">Beni Beğenenler</string>
+    <string name="action_likes_bottom">Beğenmeler</string>
+
+
+    //LOGIN
+    <string name="login_email_password">E-posta ve Şifre</string>
+    <string name="login_facebook">Facebook ile Devam Et</string>
+    <string name="login_email">E-posta</string>
+    <string name="login_password">Parola</string>
+    <string name="login_remember_me">Beni Hatırla</string>
+    <string name="login_sign_in">Giriş Yap</string>
+    <string name="login_sign_up">Üye Ol</string>
+    <string name="login_no_account">Hesabınız yok mu ?</string>
+    <string name="invalid_mail">Geçersiz e-posta adresi</string>
+    <string name="invalid_email_or_password">Şifre Yanlış</string>
+    <string name="invalid_password_length">Şifre 5 karakterden uzun olmalı</string>
+    <string name="login_failed">Giriş yapılamadı</string>
+    <string name="login_successful">Giriş başarılı</string>
+    <string name="login_error">Hesap bulunamadı</string>
+
+    //SIGN UP
+    <string name="sign_up_email">E-posta</string>
+    <string name="sign_up_password">Parola</string>
+    <string name="sign_up_password2">Parola Tekrarı</string>
+    <string name="sign_up_create_account">Üyelik Oluştur</string>
+    <string name="sign_up_already_have">Zaten bir hesabınız var mı ?</string>
+    <string name="sign_up_email_empty_error">E-posta boş bırakılamaz</string>
+    <string name="sign_up_password_empty_error">Parola boş bırakılamaz</string>
+    <string name="sign_up_password_match_error">Parola eşleşmiyor</string>
+    <string name="sign_up_email_error">E-posta geçersiz</string>
+    <string name="sign_up_email_exists">E-posta kullanılıyor</string>
+    <string name="sign_up_password_space_error">Parola boşluk içeremez</string>
+    <string name="sign_up_password_length_error1">Parola 5 karakterden uzun olmalı</string>
+    <string name="sign_up_password_length_error2">Parola 15 karakterden kısa olmalı</string>
+    <string name="sign_up_successful">Üyelik başarılı</string>
+    <string name="sign_up_error">Üyelik alınamadı</string>
+    <string name="sign_up_weak_password">Şifre Zayıf</string>
+
+
+    //SET INFO
+    <string name="set_info">Üyelik Bilgileriniz</string>
+    <string name="set_info_name">İsim</string>
+    <string name="set_info_surname">Soyisim</string>
+    <string name="set_info_gender">Cinsiyet</string>
+    <string name="set_info_birth_date">Doğum Tarihi</string>
+    <string name="set_info_description">Kısaca Kendinden Bahset</string>
+    <string name="set_info_interests">İlgi Alanları</string>
+    <string name="set_info_suggestion">***İkinci Seçeneği Farklı Seçmek Eşleştirmeye Yardımcı Olacaktır</string>
+    <string name="set_info_city">Yaşadığın Şehir</string>
+    <string name="set_info_age_rate">Hedef Yaş Aralığı (Sizin Yaşınıza Göre)</string>
+    <string name="set_info_interest_gender">İlgilenilen Cinsiyet</string>
+    <string name="set_info_season">En Sevdiğin Mevsim</string>
+    <string name="set_info_weather">En Sevdiğin Hava Durumu</string>
+    <string name="set_info_music1">En Sevdiğin Müzik Tarzı</string>
+    <string name="set_info_music2">İkinci Sevdiğin Müzik Tarzı</string>
+    <string name="set_info_sport1">En Sevdiğin Spor</string>
+    <string name="set_info_sport2">En Sevdiğin İkinci Spor</string>
+    <string name="set_info_book1">En Sevdiğin Roman Türü</string>
+    <string name="set_info_book2">En Sevdiğin İkinci Roman Türü</string>
+    <string name="set_info_hobby1">Yapmaktan En Çok Hoşlandığını Seç</string>
+    <string name="set_info_hobby2">Yapmaktan En Çok Hoşlandığını Seç</string>
+    <string name="set_info_movie1">En Sevdiğin Film Türü</string>
+    <string name="set_info_movie2">En Sevdiğin İkinci Film Türü</string>
+    <string name="set_info_finish">Kaydet ve Bitir</string>
+    <string name="set_info_pick_image">Profil Resmi Seç</string>
+    <string name="set_info_pick_date">Tarih Seçiniz</string>
+    <string name="set_info_pick">Seç</string>
+    <string name="set_info_cancel">İptal</string>
+    <string name="set_info_zodiac">Burç</string>
+
+
+    //UPDATE
+    <string name="update">Bilgileri Güncelle</string>
+    <string name="update_name">İsim</string>
+    <string name="update_surname">Soyisim</string>
+    <string name="update_gender">Cinsiyet</string>
+    <string name="update_birth_date">Doğum Tarihi</string>
+    <string name="update_description">Açıklama</string>
+    <string name="update_interests">İlgi Alanları</string>
+    <string name="update_city">Yaşadığın Şehir</string>
+    <string name="update_zodiac">Burç</string>
+    <string name="update_age_rate">Hedef Yaş Aralığı (Sizin Yaşınıza Göre)</string>
+    <string name="update_interest_gender">İlgilenilen Cinsiyet</string>
+    <string name="update_season">En Sevdiğin Mevsim</string>
+    <string name="update_weather">En Sevdiğin Hava Durumu</string>
+    <string name="update_music1">En Sevdiğin Müzik Tarzı</string>
+    <string name="update_music2">İkinci Sevdiğin Müzik Tarzı</string>
+    <string name="update_sport1">En Sevdiğin Spor</string>
+    <string name="update_sport2">En Sevdiğin İkinci Spor</string>
+    <string name="update_book1">En Sevdiğin Roman Türü</string>
+    <string name="update_book2">En Sevdiğin İkinci Roman Türü</string>
+    <string name="update_hobby1">Yapmaktan En Çok Hoşlandığını Seç</string>
+    <string name="update_hobby2">Yapmaktan En Çok Hoşlandığını Seç</string>
+    <string name="update_movie1">En Sevdiğin Film Türü</string>
+    <string name="update_movie2">En Sevdiğin İkinci Film Türü</string>
+    <string name="update_finish">Güncelle</string>
+    <string name="update_pick_image">Profil Resmi Güncelle</string>
+
+    //INTERESTS
+    <string name="interests_age_rate">Hedef Yaş Aralığı</string>
+    <string name="interests_interest_gender">İlgilenilen Cinsiyet</string>
+    <string name="interests_season">Favori Mevsim</string>
+    <string name="interests_weather">Favori Hava Durumu</string>
+    <string name="interests_music1">Favori Müzik Tarzın</string>
+    <string name="interests_music2">Favori Müzik Tarzın</string>
+    <string name="interests_sport1">Favori Spor Türün</string>
+    <string name="interests_sport2">Favori Spor Türün</string>
+    <string name="interests_book1">Favori Roman Türün</string>
+    <string name="interests_book2">Favori Roman Türün</string>
+    <string name="interests_hobby1">Favori Hobin</string>
+    <string name="interests_hobby2">Favori Hobin</string>
+    <string name="interests_movie1">Favori Film Türün</string>
+    <string name="interests_movie2">Favori Film Türün</string>
+    <string name="interests_update">Profili Düzenle</string>
+    <string name="interests_null">null</string>
+
+    //INFO ERROR
+    <string name="info_name_empty_error">İsim boş bırakılamaz</string>
+    <string name="info_surname_empty_error">Soyisim boş bırakılamaz</string>
+    <string name="info_birth_date_empty_error">Doğum Tarihi boş bırakılamaz</string>
+    <string name="info_birth_date_year_error">Geçersiz Doğum Tarihi</string>
+    <string name="info_gender_error">Cinsiyeti Seçiniz</string>
+    <string name="info_city_error">Şehir Seçiniz</string>
+    <string name="info_zodiac_error">Burç Seçiniz</string>
+    <string name="info_age_rate_error">Yaş Aralığı Seçiniz</string>
+    <string name="info_interest_gender_error">İlgilenilen Cinsiyet Seçiniz</string>
+    <string name="info_season_error">Mevsim Seçiniz</string>
+    <string name="info_weather_error">Hava Durumu Seçiniz</string>
+    <string name="info_music1_error">Müzik Türünü Seçiniz</string>
+    <string name="info_music2_error">İkinci Müzik Türünü Seçiniz</string>
+    <string name="info_sport1_error">Spor Türünü Seçiniz</string>
+    <string name="info_sport2_error">İkinci Spor Türünü Seçiniz</string>
+    <string name="info_book1_error">Roman Türünü Seçiniz</string>
+    <string name="info_book2_error">İkinci Roman Türünü Seçiniz</string>
+    <string name="info_hobby1_error">Hobi Seçiniz</string>
+    <string name="info_hobby2_error">İkinci Hobiyi Seçiniz</string>
+    <string name="info_movie1_error">Film Türünü Seçiniz</string>
+    <string name="info_movie2_error">İkinci Film Türünü Seçiniz</string>
+    <string name="info_music_match_error">İkinci Müzik Türünü Farklı Seçiniz</string>
+    <string name="info_sport_match_error">İkinci Spor Türünü Farklı Seçiniz</string>
+    <string name="info_book_match_error">İkinci Roman Türünü Farklı Seçiniz</string>
+    <string name="info_hobby_match_error">İkinci Hobiyi Farklı Seçiniz</string>
+    <string name="info_movie_match_error">İkinci Film Türünü Farklı Seçiniz</string>
+
+    //PROFILE
+    <string name="profile_name">İsim</string>
+    <string name="profile_city">Şehir</string>
+    <string name="profile_birt_date">Doğum Tarihi</string>
+    <string name="profile_gender">Cinsiyet</string>
+    <string name="profile_zodiac">Burç</string>
+    <string name="profile_email">E-Posta</string>
+    <string name="profile_description">Hakkımda</string>
+    <string name="profile_button_update">Profili Düzenle</string>
+    <string name="profile_verify_email">(E-Posta Adresini Doğrulamak İçin Tıkla)</string>
+    <string name="profile_null">null</string>
+    <string name="profile_verification_mail_sent">Doğrulama E-postası gönderildi.</string>
+
+    //MATCHES
+    <string name="match_title">Eşleşme</string>
+    <string name="match_error">Eşleşme Sırasında Hata Oluştu</string>
+
+
+    //SPINNER ITEMS
+    <string-array name="interests_zodiac">
+        <item>...</item>
+        <item>Kova</item>
+        <item>Balık</item>
+        <item>Koç</item>
+        <item>Boğa</item>
+        <item>İkizler</item>
+        <item>Yengeç</item>
+        <item>Aslan</item>
+        <item>Başak</item>
+        <item>Terazi</item>
+        <item>Akrep</item>
+        <item>Yay</item>
+        <item>Oğlak</item>
+    </string-array>
+    <string-array name="cities">
+        <item>...</item>
+        <item>Adana</item>
+        <item>Adıyaman</item>
+        <item>Afyon</item>
+        <item>Ağrı</item>
+        <item>Amasya</item>
+        <item>Ankara</item>
+        <item>Antalya</item>
+        <item>Artvin</item>
+        <item>Aydın</item>
+        <item>Balıkesir</item>
+        <item>Bilecik</item>
+        <item>Bingöl</item>
+        <item>Bitlis</item>
+        <item>Bolu</item>
+        <item>Burdur</item>
+        <item>Bursa</item>
+        <item>Çanakkale</item>
+        <item>Çankırı</item>
+        <item>Çorum</item>
+        <item>Denizli</item>
+        <item>Diyarbakır</item>
+        <item>Edirne</item>
+        <item>Elazığ</item>
+        <item>Erzincan</item>
+        <item>Erzurum</item>
+        <item>Eskişehir</item>
+        <item>Gaziantep</item>
+        <item>Giresun</item>
+        <item>Gümüşhane</item>
+        <item>Hakkari</item>
+        <item>Hatay</item>
+        <item>Isparta</item>
+        <item>Mersin</item>
+        <item>İstanbul</item>
+        <item>İzmir</item>
+        <item>Kars</item>
+        <item>Kastamonu</item>
+        <item>Kayseri</item>
+        <item>Kırklareli</item>
+        <item>Kırşehir</item>
+        <item>Kocaeli</item>
+        <item>Konya</item>
+        <item>Kütahya</item>
+        <item>Malatya</item>
+        <item>Manisa</item>
+        <item>Kahramanmaraş</item>
+        <item>Mardin</item>
+        <item>Muğla</item>
+        <item>Muş</item>
+        <item>Nevşehir</item>
+        <item>Niğde</item>
+        <item>Ordu</item>
+        <item>Rize</item>
+        <item>Sakarya</item>
+        <item>Samsun</item>
+        <item>Siirt</item>
+        <item>Sinop</item>
+        <item>Sivas</item>
+        <item>Tekirdağ</item>
+        <item>Tokat</item>
+        <item>Trabzon</item>
+        <item>Tunceli</item>
+        <item>Şanlıurfa</item>
+        <item>Uşak</item>
+        <item>Van</item>
+        <item>Yozgat</item>
+        <item>Zonguldak</item>
+        <item>Aksaray</item>
+        <item>Bayburt</item>
+        <item>Karaman</item>
+        <item>Kırıkkale</item>
+        <item>Batman</item>
+        <item>Şırnak</item>
+        <item>Bartın</item>
+        <item>Ardahan</item>
+        <item>Iğdır</item>
+        <item>Yalova</item>
+        <item>Karabük</item>
+        <item>Kilis</item>
+        <item>Osmaniye</item>
+        <item>Düzce</item>
+    </string-array>
+    <string-array name="gender">
+        <item>...</item>
+        <item>Erkek</item>
+        <item>Kadın</item>
+    </string-array>
+    <string-array name="interests_age_rate">
+        <item>...</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>15+</item>
+    </string-array>
+    <string-array name="interests_book_type">
+        <item>...</item>
+        <item>Tarihi</item>
+        <item>Macera</item>
+        <item>Psikolojik</item>
+        <item>Bilim-Araştırma</item>
+        <item>Bilim-Kurgu</item>
+        <item>Fantastik</item>
+        <item>Romantik</item>
+        <item>Korku</item>
+        <item>Polisiye</item>
+    </string-array>
+    <string-array name="interests_gender">
+        <item>...</item>
+        <item>Erkek</item>
+        <item>Kadın</item>
+        <item>Erkek/Kadın</item>
+    </string-array>
+    <string-array name="interests_hobby">
+        <item>...</item>
+        <item>Koleksiyon Yapmak</item>
+        <item>Astronomiyle İlgilenmek</item>
+        <item>Fotoğraf Çekmek</item>
+        <item>Gönüllü Çalışmalar</item>
+        <item>Yabancı Dil Öğrenmek</item>
+        <item>Kod Yazmak</item>
+        <item>Enstrüman Çalmak</item>
+        <item>Yürüyüş Yapmak</item>
+        <item>Bahçe İşleriyle Uğraşmak</item>
+        <item>Yemek Yapmak</item>
+        <item>Seyahat Etmek</item>
+        <item>Spor Yapmak</item>
+        <item>Bilgisayar Oyunları Oynamak</item>
+        <item>Bisiklet Sürmek</item>
+    </string-array>
+    <string-array name="interests_movie_type">
+        <item>...</item>
+        <item>Aksiyon</item>
+        <item>Belgesel</item>
+        <item>Bilim-Kurgu</item>
+        <item>Drama</item>
+        <item>Eğitim</item>
+        <item>Fantastik</item>
+        <item>Gerilim</item>
+        <item>Komedi</item>
+        <item>Korku</item>
+        <item>Macera</item>
+        <item>Tarihi</item>
+    </string-array>
+    <string-array name="interests_music_type">
+        <item>...</item>
+        <item>Klasik</item>
+        <item>Blues</item>
+        <item>Halk Müzikleri</item>
+        <item>Elektronik Müzik</item>
+        <item>Jazz</item>
+        <item>Pop</item>
+        <item>Rockn Roll</item>
+    </string-array>
+    <string-array name="interests_season">
+        <item>...</item>
+        <item>İlkbahar</item>
+        <item>Yaz</item>
+        <item>Sonbahar</item>
+        <item>Kış</item>
+    </string-array>
+    <string-array name="interests_weather">
+        <item>...</item>
+        <item>Güneşli</item>
+        <item>Bulutlu</item>
+        <item>Yağmurlu</item>
+        <item>Karlı</item>
+    </string-array>
+    <string-array name="interests_sport_type">
+        <item>...</item>
+        <item>Futbol</item>
+        <item>Basketbol</item>
+        <item>Voleybol</item>
+        <item>Tenis</item>
+        <item>Kış Kayak Sporları</item>
+        <item>Dövüş Sanatları</item>
+        <item>Hentbol</item>
+        <item>Golf</item>
+        <item>Atletizm</item>
+        <item>Binicilik</item>
+        <item>Koşu</item>
+    </string-array>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+</resources>

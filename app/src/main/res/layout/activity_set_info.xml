@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".view.activity.SetInfoActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarSetInfo"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutSetInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/set_info_pick_image"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                app:cardCornerRadius="32dp">
+
+                <ImageView
+                    android:id="@+id/imageViewSetInfo"
+                    android:layout_width="256dp"
+                    android:layout_height="256dp"
+                    android:layout_gravity="center"
+                    android:background="@color/custom_2"
+                    android:contentDescription="TODO"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_profile_64"
+                    tools:layout_editor_absoluteY="220dp" />
+            </androidx.cardview.widget.CardView>
+
+            <EditText
+                android:id="@+id/editTextSetInfoName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/set_info_name"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editTextSetInfoSurname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/set_info_surname"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editTextSetInfoBirthDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:focusableInTouchMode="false"
+                android:hint="@string/set_info_birth_date"
+                android:inputType="date" />
+
+            <EditText
+                android:id="@+id/editTextSetInfoDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="8dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/set_info_description"
+                android:inputType="textMultiLine" />
+
+            <TextView
+                android:id="@+id/textViewSetInfoInterests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/set_info_interests"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewSetInfoSuggestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/set_info_suggestion"
+                android:textColor="@color/design_default_color_error"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textViewSetInfoGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/set_info_gender"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSetInfoGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewSetInfoCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/set_info_city"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSetInfoCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewSetInfoZodiac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/set_info_zodiac"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSetInfoZodiac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewSetInfoAgeRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/set_info_age_rate"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSetInfoAgeRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewSetInfoGenderInterest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/set_info_interest_gender"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSetInfoGenderInterest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewSetInfoSeason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/set_info_season"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSetInfoSeason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewSetInfoWeather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/set_info_weather"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSetInfoWeather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewSetInfoMusic1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/set_info_music1"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSetInfoMusic1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewSetInfoMusic2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/set_info_music2"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSetInfoMusic2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewSetInfoSport1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/set_info_sport1"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSetInfoSport1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewSetInfoSport2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/set_info_sport2"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSetInfoSport2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewSetInfoBook1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/set_info_book1"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSetInfoBook1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewSetInfoBook2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/set_info_book2"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSetInfoBook2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewSetInfoHobby1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/set_info_hobby1"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSetInfoHobby1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewSetInfoHobby2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/set_info_hobby2"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSetInfoHobby2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewSetInfoMovie1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/set_info_movie1"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSetInfoMovie1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewSetInfoMovie2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/set_info_movie2"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSetInfoMovie2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <Button
+                android:id="@+id/buttonSetInfoFinish"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_margin="16dp"
+                android:text="@string/set_info_finish"
+                android:textAllCaps="false"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarSetInfo"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

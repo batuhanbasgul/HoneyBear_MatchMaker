@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".view.activity.UpdateActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarUpdate">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/update_pick_image"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                app:cardCornerRadius="32dp">
+
+                <ImageView
+                    android:id="@+id/imageViewUpdate"
+                    android:layout_width="256dp"
+                    android:layout_height="256dp"
+                    android:layout_gravity="center"
+                    android:background="@color/custom_2"
+                    android:contentDescription="TODO"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_profile_64"
+                    tools:layout_editor_absoluteY="220dp" />
+            </androidx.cardview.widget.CardView>
+
+            <EditText
+                android:id="@+id/editTextUpdateName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/update_name"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editTextUpdateSurname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/update_surname"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editTextUpdateBirthDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:focusableInTouchMode="false"
+                android:hint="@string/update_birth_date"
+                android:inputType="date" />
+
+            <EditText
+                android:id="@+id/editTextUpdateDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="8dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/update_description"
+                android:inputType="textMultiLine" />
+
+            <TextView
+                android:id="@+id/textViewUpdateInterests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/set_info_interests"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewUpdateGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/update_gender"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerUpdateGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewUpdateCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/update_city"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerUpdateCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewUpdateZodiac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/update_zodiac"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerUpdateZodiac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewUpdateAgeRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/update_age_rate"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerUpdateAgeRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewUpdateGenderInterest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/update_interest_gender"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerUpdateGenderInterest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewUpdateSeason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/update_season"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerUpdateSeason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewUpdateWeather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/update_weather"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerUpdateWeather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewUpdateMusic1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/update_music1"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerUpdateMusic1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewUpdateMusic2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/update_music2"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerUpdateMusic2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewUpdateSport1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/update_sport1"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerUpdateSport1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewUpdateSport2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/update_sport2"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerUpdateSport2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewUpdateBook1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/update_book1"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerUpdateBook1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewUpdateBook2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/update_book2"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerUpdateBook2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewUpdateHobby1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/update_hobby1"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerUpdateHobby1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewUpdateHobby2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/update_hobby2"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerUpdateHobby2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewUpdateMovie1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/update_movie1"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerUpdateMovie1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <TextView
+                android:id="@+id/textViewUpdateMovie2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/update_movie2"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerUpdateMovie2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rectangular_field" />
+
+            <Button
+                android:id="@+id/buttonUpdateFinish"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_margin="16dp"
+                android:text="@string/update_finish"
+                android:textAllCaps="false"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
