@@ -16,7 +16,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FacebookAuthProvider
 import com.honey_bear.honeybear_matchmaker.R
 import com.honey_bear.honeybear_matchmaker.data.model.User
-import com.honey_bear.honeybear_matchmaker.view_model.FirebaseAuthViewModel
+import com.honey_bear.honeybear_matchmaker.view_model.AuthViewModel
 import com.honey_bear.honeybear_matchmaker.view_model.UserViewModel
 import kotlinx.android.synthetic.main.activity_set_info.*
 import java.util.*
@@ -24,7 +24,7 @@ import kotlin.collections.ArrayList
 
 class SetInfoActivity : AppCompatActivity() {
     private lateinit var userViewModel: UserViewModel
-    private lateinit var firebaseAuthViewModel: FirebaseAuthViewModel
+    private lateinit var authViewModel: AuthViewModel
     private lateinit var adapter: ArrayAdapter<CharSequence>
     private val pickImageRequest = 71
     private var imageUri: Uri? = null
@@ -53,7 +53,7 @@ class SetInfoActivity : AppCompatActivity() {
 
     private fun setServiceVariables() {
         userViewModel = ViewModelProvider(this@SetInfoActivity).get(UserViewModel::class.java)
-        firebaseAuthViewModel = ViewModelProvider(this@SetInfoActivity).get(FirebaseAuthViewModel::class.java)
+        authViewModel = ViewModelProvider(this@SetInfoActivity).get(AuthViewModel::class.java)
     }
 
     @SuppressLint("SetTextI18n")
@@ -101,7 +101,7 @@ class SetInfoActivity : AppCompatActivity() {
         //SAVE DATA
         buttonSetInfoFinish.setOnClickListener {
             if(checkValidation()){
-                firebaseAuthViewModel.currentFirebaseUser.observe(this@SetInfoActivity, Observer{
+                authViewModel.currentFirebaseUser.observe(this@SetInfoActivity, Observer{
                     val email:String = it.email!!
                     val uid:String = it.uid
                     if (isProviderFacebook){
@@ -159,15 +159,15 @@ class SetInfoActivity : AppCompatActivity() {
                                 spinnerSetInfoMovie2.selectedItem.toString())
                         userViewModel.insertUser(userData,imageUri)
                     }
-                    firebaseAuthViewModel.cancelJobs()
+                    authViewModel.cancelJobs()
                 })
-                firebaseAuthViewModel.signOut(this,LoginActivity())
+                authViewModel.signOut(this,LoginActivity())
             }
         }
     }
 
     private fun getInfoByFacebook(){
-        firebaseAuthViewModel.currentFirebaseUser.observe(this@SetInfoActivity,Observer{
+        authViewModel.currentFirebaseUser.observe(this@SetInfoActivity,Observer{
             for(userInfo in it.providerData){
                 if(FacebookAuthProvider.PROVIDER_ID == userInfo.providerId){
                     facebookPhotoUrl ="https://graph.facebook.com/${userInfo.uid}/picture?height=500"
@@ -209,7 +209,7 @@ class SetInfoActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        firebaseAuthViewModel.signOut(this,LoginActivity())
+        authViewModel.signOut(this,LoginActivity())
         super.onBackPressed()
     }
 

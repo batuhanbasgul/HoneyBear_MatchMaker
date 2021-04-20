@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -21,7 +20,7 @@ import com.honey_bear.honeybear_matchmaker.utils.MatchUtils
 import com.honey_bear.honeybear_matchmaker.view.activity.MainActivity
 import com.honey_bear.honeybear_matchmaker.view.activity.SettingsActivity
 import com.honey_bear.honeybear_matchmaker.view.adapters.MatchesAdapter
-import com.honey_bear.honeybear_matchmaker.view_model.FirebaseAuthViewModel
+import com.honey_bear.honeybear_matchmaker.view_model.AuthViewModel
 import com.honey_bear.honeybear_matchmaker.view_model.UserLocationViewModel
 import com.honey_bear.honeybear_matchmaker.view_model.UserViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -32,7 +31,7 @@ class MatchesFragment(
         ) : Fragment() {
     private lateinit var userViewModel: UserViewModel
     private lateinit var userLocationViewModel: UserLocationViewModel
-    private lateinit var firebaseAuthViewModel:FirebaseAuthViewModel
+    private lateinit var authViewModel:AuthViewModel
     private lateinit var matchesAdapter: MatchesAdapter
     private lateinit var swipeRefreshLayoutMatches: SwipeRefreshLayout
     private lateinit var currentUserId:String
@@ -52,13 +51,13 @@ class MatchesFragment(
     private fun setServiceVariables() {
         userViewModel= ViewModelProvider(this@MatchesFragment).get(UserViewModel::class.java)
         userLocationViewModel= ViewModelProvider(this@MatchesFragment).get(UserLocationViewModel::class.java)
-        firebaseAuthViewModel= ViewModelProvider(this@MatchesFragment).get(FirebaseAuthViewModel::class.java)
+        authViewModel= ViewModelProvider(this@MatchesFragment).get(AuthViewModel::class.java)
 
-        firebaseAuthViewModel.currentFirebaseUser.observe(viewLifecycleOwner, Observer {
+        authViewModel.currentFirebaseUser.observe(viewLifecycleOwner, Observer {
             userLocationViewModel.setCurrentUserId(it.uid)
             userViewModel.setCurrentUserId(it.uid)
             currentUserId=it.uid
-            firebaseAuthViewModel.cancelJobs()
+            authViewModel.cancelJobs()
         })
     }
 

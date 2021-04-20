@@ -16,13 +16,13 @@ import com.bumptech.glide.Glide
 import com.honey_bear.honeybear_matchmaker.R
 import com.honey_bear.honeybear_matchmaker.view.activity.MainActivity
 import com.honey_bear.honeybear_matchmaker.view.activity.UpdateActivity
-import com.honey_bear.honeybear_matchmaker.view_model.FirebaseAuthViewModel
+import com.honey_bear.honeybear_matchmaker.view_model.AuthViewModel
 import com.honey_bear.honeybear_matchmaker.view_model.UserViewModel
 import kotlinx.android.synthetic.main.fragment_profile.*
 
 class ProfileFragment(private val mContext: Context) : Fragment() {
     private lateinit var userViewModel:UserViewModel
-    private lateinit var firebaseAuthViewModel : FirebaseAuthViewModel
+    private lateinit var authViewModel : AuthViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view: View = inflater.inflate(R.layout.fragment_profile, container, false)
@@ -38,20 +38,20 @@ class ProfileFragment(private val mContext: Context) : Fragment() {
 
     private fun setServiceVariables() {
         userViewModel = ViewModelProvider(this@ProfileFragment).get(UserViewModel::class.java)
-        firebaseAuthViewModel = ViewModelProvider(this@ProfileFragment).get(FirebaseAuthViewModel::class.java)
-        firebaseAuthViewModel.currentFirebaseUser.observe(viewLifecycleOwner, Observer {
+        authViewModel = ViewModelProvider(this@ProfileFragment).get(AuthViewModel::class.java)
+        authViewModel.currentFirebaseUser.observe(viewLifecycleOwner, Observer {
             userViewModel.setCurrentUserId(it.uid)
-            firebaseAuthViewModel.cancelJobs()
+            authViewModel.cancelJobs()
         })
     }
 
     private fun emailVerification(view:View) {
         val textViewVerifyEmail:TextView = view.findViewById(R.id.textViewVerifyEmail)
-        firebaseAuthViewModel.currentFirebaseUser.observe(viewLifecycleOwner, Observer {
+        authViewModel.currentFirebaseUser.observe(viewLifecycleOwner, Observer {
             if(!it.isEmailVerified){
                 textViewVerifyEmail.visibility = View.VISIBLE
             }
-            firebaseAuthViewModel.cancelJobs()
+            authViewModel.cancelJobs()
         })
     }
 
@@ -60,7 +60,7 @@ class ProfileFragment(private val mContext: Context) : Fragment() {
         val buttonProfileUpdate:Button = view.findViewById(R.id.buttonProfileUpdate)
 
         textViewVerifyEmail.setOnClickListener {
-            firebaseAuthViewModel.verifyEmail()
+            authViewModel.verifyEmail()
             Toast.makeText(mContext,resources.getString(R.string.profile_verification_mail_sent),Toast.LENGTH_LONG).show()
         }
 

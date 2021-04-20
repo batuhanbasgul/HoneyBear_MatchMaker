@@ -3,15 +3,14 @@ package com.honey_bear.honeybear_matchmaker.view.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.honey_bear.honeybear_matchmaker.R
-import com.honey_bear.honeybear_matchmaker.view_model.FirebaseAuthViewModel
+import com.honey_bear.honeybear_matchmaker.view_model.AuthViewModel
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
 class SignUpActivity : AppCompatActivity() {
-    private lateinit var firebaseAuthViewModel: FirebaseAuthViewModel
+    private lateinit var authViewModel: AuthViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
@@ -23,7 +22,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun setServiceVariables() {
-        firebaseAuthViewModel = ViewModelProvider(this@SignUpActivity).get(FirebaseAuthViewModel::class.java)
+        authViewModel = ViewModelProvider(this@SignUpActivity).get(AuthViewModel::class.java)
     }
 
     private fun setListeners() {
@@ -42,7 +41,7 @@ class SignUpActivity : AppCompatActivity() {
         val pass1:String = editTextSignUpPass1.text.toString()
         val pass2:String = editTextSignUpPass2.text.toString()
         if(checkValidation(email,pass1,pass2)){
-            firebaseAuthViewModel.signUp(this,LoginActivity(),email,pass1)
+            authViewModel.signUp(this,LoginActivity(),email,pass1)
         }
     }
 

@@ -10,12 +10,11 @@ import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import com.honey_bear.honeybear_matchmaker.R
 import com.honey_bear.honeybear_matchmaker.data.model.User
-import com.honey_bear.honeybear_matchmaker.view_model.FirebaseAuthViewModel
+import com.honey_bear.honeybear_matchmaker.view_model.AuthViewModel
 import com.honey_bear.honeybear_matchmaker.view_model.UserViewModel
 import kotlinx.android.synthetic.main.activity_set_info.*
 import kotlinx.android.synthetic.main.activity_update.*
@@ -23,7 +22,7 @@ import java.util.*
 
 class UpdateActivity : AppCompatActivity() {
     private lateinit var userViewModel: UserViewModel
-    private lateinit var firebaseAuthViewModel: FirebaseAuthViewModel
+    private lateinit var authViewModel: AuthViewModel
     private lateinit var adapter: ArrayAdapter<CharSequence>
     private lateinit var currentUser: User
 
@@ -49,10 +48,10 @@ class UpdateActivity : AppCompatActivity() {
 
     private fun setServiceVariables() {
         userViewModel = ViewModelProvider(this@UpdateActivity).get(UserViewModel::class.java)
-        firebaseAuthViewModel = ViewModelProvider(this@UpdateActivity).get(FirebaseAuthViewModel::class.java)
-        firebaseAuthViewModel.currentFirebaseUser.observe(this@UpdateActivity, Observer {
+        authViewModel = ViewModelProvider(this@UpdateActivity).get(AuthViewModel::class.java)
+        authViewModel.currentFirebaseUser.observe(this@UpdateActivity, Observer {
             userViewModel.setCurrentUserId(it.uid)
-            firebaseAuthViewModel.cancelJobs()
+            authViewModel.cancelJobs()
         })
     }
 

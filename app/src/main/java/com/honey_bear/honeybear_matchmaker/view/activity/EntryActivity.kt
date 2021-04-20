@@ -11,12 +11,12 @@ import android.view.animation.AnimationUtils
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.honey_bear.honeybear_matchmaker.R
-import com.honey_bear.honeybear_matchmaker.view_model.FirebaseAuthViewModel
+import com.honey_bear.honeybear_matchmaker.view_model.AuthViewModel
 import kotlinx.android.synthetic.main.activity_entry.*
 import kotlinx.android.synthetic.main.activity_login.*
 
 class EntryActivity : AppCompatActivity() {
-    private lateinit var firebaseAuthViewModel: FirebaseAuthViewModel
+    private lateinit var authViewModel: AuthViewModel
     private lateinit var animationObject: Animation
     private lateinit var countDownTimer: CountDownTimer
     private lateinit var sharedPreferences: SharedPreferences
@@ -33,7 +33,7 @@ class EntryActivity : AppCompatActivity() {
     }
 
     private fun setServiceVariables() {
-        firebaseAuthViewModel = ViewModelProvider(this@EntryActivity).get(FirebaseAuthViewModel::class.java)
+        authViewModel = ViewModelProvider(this@EntryActivity).get(AuthViewModel::class.java)
     }
 
     private fun loadEntryPageAnimation(){
@@ -57,22 +57,12 @@ class EntryActivity : AppCompatActivity() {
     }
 
     private fun checkRememberMe(){
-        firebaseAuthViewModel.currentFirebaseUser.observe(this@EntryActivity, Observer {
+        authViewModel.currentFirebaseUser.observe(this@EntryActivity, Observer {
             it?.let{
                 startActivity(Intent(this@EntryActivity,MainActivity::class.java))
-                finish()
             }
         })
         sharedPreferences = getSharedPreferences("User", Context.MODE_PRIVATE)
-        if(sharedPreferences.getBoolean("remember_user", false)){
-            val email:String? = sharedPreferences.getString("email", null)
-            val password:String? = sharedPreferences.getString("password", null)
-            if(!email.isNullOrEmpty() && !password.isNullOrEmpty()){
-                firebaseAuthViewModel.signIn(this,MainActivity(),email,password)
-            }
-        }else{
-            startActivity(Intent(this@EntryActivity, LoginActivity::class.java))
-            finish()
-        }
+        startActivity(Intent(this@EntryActivity, LoginActivity::class.java))
     }
 }

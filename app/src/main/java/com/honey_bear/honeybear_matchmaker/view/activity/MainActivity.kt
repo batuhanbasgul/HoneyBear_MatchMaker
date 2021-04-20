@@ -1,6 +1,5 @@
 package com.honey_bear.honeybear_matchmaker.view.activity
 
-import android.app.ProgressDialog
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -14,14 +13,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import com.honey_bear.honeybear_matchmaker.R
 import com.honey_bear.honeybear_matchmaker.data.model.User
 import com.honey_bear.honeybear_matchmaker.data.service.GpsRepository
 import com.honey_bear.honeybear_matchmaker.view.fragment.*
-import com.honey_bear.honeybear_matchmaker.view_model.FirebaseAuthViewModel
+import com.honey_bear.honeybear_matchmaker.view_model.AuthViewModel
 import com.honey_bear.honeybear_matchmaker.view_model.UserLocationViewModel
 import com.honey_bear.honeybear_matchmaker.view_model.UserViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -31,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     //API
     private lateinit var userViewModel: UserViewModel
     private lateinit var userLocationViewModel: UserLocationViewModel
-    private lateinit var firebaseAuthViewModel: FirebaseAuthViewModel
+    private lateinit var authViewModel: AuthViewModel
 
     //SharedPreferences
     private lateinit var sharedPreferences: SharedPreferences
@@ -48,7 +46,6 @@ class MainActivity : AppCompatActivity() {
 
         //Setting service parameters and variables
         setServiceVariables()
-        updateLocation()
         //Init toolbar
         toolbar.title=""
         setSupportActionBar(toolbar)
@@ -70,12 +67,12 @@ class MainActivity : AppCompatActivity() {
     private fun setServiceVariables() {
         userViewModel=ViewModelProvider(this@MainActivity).get(UserViewModel::class.java)
         userLocationViewModel=ViewModelProvider(this@MainActivity).get(UserLocationViewModel::class.java)
-        firebaseAuthViewModel=ViewModelProvider(this@MainActivity).get(FirebaseAuthViewModel::class.java)
-        firebaseAuthViewModel.currentFirebaseUser.observe(this@MainActivity, Observer {
+        authViewModel=ViewModelProvider(this@MainActivity).get(AuthViewModel::class.java)
+        authViewModel.currentFirebaseUser.observe(this@MainActivity, Observer {
             userViewModel.setCurrentUserId(it.uid)
             userLocationViewModel.setCurrentUserId(it.uid)
             isInterestsGiven(it)
-            firebaseAuthViewModel.cancelJobs()
+            authViewModel.cancelJobs()
         })
     }
 
@@ -159,7 +156,7 @@ class MainActivity : AppCompatActivity() {
                     editor.remove("email")
                     editor.remove("password")
                     editor.commit()
-                    firebaseAuthViewModel.signOut(this, LoginActivity())
+                    authViewModel.signOut(this, LoginActivity())
                 }
                 R.id.action_likes -> {
                     fragmentObject = LikesFragment(this@MainActivity)

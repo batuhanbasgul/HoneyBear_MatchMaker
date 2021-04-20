@@ -1,7 +1,6 @@
 package com.honey_bear.honeybear_matchmaker.view.activity
 
 import android.annotation.SuppressLint
-import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -16,14 +15,13 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
-import androidx.lifecycle.Observer
 import com.honey_bear.honeybear_matchmaker.R
-import com.honey_bear.honeybear_matchmaker.view_model.FirebaseAuthViewModel
+import com.honey_bear.honeybear_matchmaker.view_model.AuthViewModel
 import kotlinx.android.synthetic.main.activity_login.*
 import java.util.*
 
 class LoginActivity : AppCompatActivity() {
-    private lateinit var firebaseAuthViewModel: FirebaseAuthViewModel
+    private lateinit var authViewModel: AuthViewModel
     private lateinit var callbackManager: CallbackManager
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
@@ -44,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setServiceVariables() {
-        firebaseAuthViewModel = ViewModelProvider(this@LoginActivity).get(FirebaseAuthViewModel::class.java)
+        authViewModel = ViewModelProvider(this@LoginActivity).get(AuthViewModel::class.java)
     }
 
     private fun initFacebook() {
@@ -102,7 +100,7 @@ class LoginActivity : AppCompatActivity() {
                 editor.remove("password")
                 editor.commit()
             }
-            firebaseAuthViewModel.signIn(
+            authViewModel.signIn(
                 this,
                 MainActivity(),
                 editTextLoginEmail.text.toString(),
@@ -129,5 +127,12 @@ class LoginActivity : AppCompatActivity() {
         }else{
             switchRememberMe.isChecked=false
         }
+    }
+
+    override fun onBackPressed() {
+        val intent = Intent(Intent.ACTION_MAIN)
+        intent.addCategory(Intent.CATEGORY_HOME)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
     }
 }

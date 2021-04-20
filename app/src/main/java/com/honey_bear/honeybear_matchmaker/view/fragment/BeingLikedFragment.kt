@@ -14,7 +14,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.honey_bear.honeybear_matchmaker.R
 import com.honey_bear.honeybear_matchmaker.view.activity.MainActivity
 import com.honey_bear.honeybear_matchmaker.view.adapters.BeingLikedAdapter
-import com.honey_bear.honeybear_matchmaker.view_model.FirebaseAuthViewModel
+import com.honey_bear.honeybear_matchmaker.view_model.AuthViewModel
 import com.honey_bear.honeybear_matchmaker.view_model.UserViewModel
 import kotlinx.android.synthetic.main.fragment_being_liked.*
 
@@ -22,7 +22,7 @@ class BeingLikedFragment(
         private val mContext:Context
         ) : Fragment() {
     private lateinit var userViewModel:UserViewModel
-    private lateinit var firebaseAuthViewModel: FirebaseAuthViewModel
+    private lateinit var authViewModel: AuthViewModel
     private lateinit var beingLikedAdapter: BeingLikedAdapter
     private lateinit var swipeRefreshLayoutBeingLiked: SwipeRefreshLayout
     private lateinit var currentUserId:String
@@ -40,11 +40,11 @@ class BeingLikedFragment(
 
     private fun setServiceVariables() {
         userViewModel = ViewModelProvider(this@BeingLikedFragment).get(UserViewModel::class.java)
-        firebaseAuthViewModel = ViewModelProvider(this@BeingLikedFragment).get(FirebaseAuthViewModel::class.java)
-        firebaseAuthViewModel.currentFirebaseUser.observe(viewLifecycleOwner, Observer {
+        authViewModel = ViewModelProvider(this@BeingLikedFragment).get(AuthViewModel::class.java)
+        authViewModel.currentFirebaseUser.observe(viewLifecycleOwner, Observer {
             userViewModel.setCurrentUserId(it.uid)
             currentUserId=it.uid
-            firebaseAuthViewModel.cancelJobs()
+            authViewModel.cancelJobs()
         })
     }
 
@@ -58,7 +58,7 @@ class BeingLikedFragment(
                 recyclerViewBeingLiked.layoutManager = LinearLayoutManager(mContext)
                 recyclerViewBeingLiked.adapter=beingLikedAdapter
 
-                progressBarBeingLiked.visibility = View.VISIBLE
+                progressBarBeingLiked.visibility = View.INVISIBLE
                 userViewModel.cancelJobs()
             })
         })

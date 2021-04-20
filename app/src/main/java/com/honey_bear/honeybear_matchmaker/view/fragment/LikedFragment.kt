@@ -14,7 +14,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.honey_bear.honeybear_matchmaker.R
 import com.honey_bear.honeybear_matchmaker.view.activity.MainActivity
 import com.honey_bear.honeybear_matchmaker.view.adapters.LikedAdapter
-import com.honey_bear.honeybear_matchmaker.view_model.FirebaseAuthViewModel
+import com.honey_bear.honeybear_matchmaker.view_model.AuthViewModel
 import com.honey_bear.honeybear_matchmaker.view_model.UserViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_liked.*
@@ -23,7 +23,7 @@ class LikedFragment(
         private val mContext: Context
         ) : Fragment() {
     private lateinit var userViewModel:UserViewModel
-    private lateinit var firebaseAuthViewModel: FirebaseAuthViewModel
+    private lateinit var authViewModel: AuthViewModel
     private lateinit var likedAdapter: LikedAdapter
     private lateinit var swipeRefreshLayoutLiked:SwipeRefreshLayout
     private lateinit var currentUserId:String
@@ -41,11 +41,11 @@ class LikedFragment(
 
     private fun setServiceVariables() {
         userViewModel = ViewModelProvider(this@LikedFragment).get(UserViewModel::class.java)
-        firebaseAuthViewModel = ViewModelProvider(this@LikedFragment).get(FirebaseAuthViewModel::class.java)
-        firebaseAuthViewModel.currentFirebaseUser.observe(viewLifecycleOwner, Observer {
+        authViewModel = ViewModelProvider(this@LikedFragment).get(AuthViewModel::class.java)
+        authViewModel.currentFirebaseUser.observe(viewLifecycleOwner, Observer {
             userViewModel.setCurrentUserId(it.uid)
             currentUserId=it.uid
-            firebaseAuthViewModel.cancelJobs()
+            authViewModel.cancelJobs()
         })
     }
 
