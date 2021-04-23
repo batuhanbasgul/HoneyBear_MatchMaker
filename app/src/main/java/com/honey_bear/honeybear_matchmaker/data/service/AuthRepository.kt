@@ -41,33 +41,39 @@ object AuthRepository {
 
     fun signIn(mContext: Context, toActivity: Activity, email: String, pass: String) {
         firebaseAuth = FirebaseAuth.getInstance()
-        firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener { firebaseUser->
-            mContext as Activity
-            mContext.run {
-                if(firebaseUser.isSuccessful){
-                    startActivity(Intent(this, toActivity::class.java))
-                    this.finish()
-                }else{
-                    try {
-                        throw firebaseUser.exception!!
-                    } catch (invalidEmail: FirebaseAuthInvalidUserException) {
-                        Toast.makeText(
-                                this,
-                                resources.getString(R.string.invalid_mail),
-                                Toast.LENGTH_LONG
-                        ).show()
-                    } catch (wrongPassword: FirebaseAuthInvalidCredentialsException) {
-                        Toast.makeText(
-                                this,
-                                resources.getString(R.string.invalid_email_or_password),
-                                Toast.LENGTH_LONG
-                        ).show()
-                    } catch (e: java.lang.Exception) {
-                        Toast.makeText(
-                                this,
-                                resources.getString(R.string.login_failed),
-                                Toast.LENGTH_LONG
-                        ).show()
+        job = Job()
+        job.let {
+            CoroutineScope(Dispatchers.IO+it).launch {
+                firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener { firebaseUser->
+                    mContext as Activity
+                    mContext.run {
+                        if(firebaseUser.isSuccessful){
+                            startActivity(Intent(this, toActivity::class.java))
+                            this.finish()
+                        }else{
+                            try {
+                                throw firebaseUser.exception!!
+                            } catch (invalidEmail: FirebaseAuthInvalidUserException) {
+                                Toast.makeText(
+                                        this,
+                                        resources.getString(R.string.invalid_mail),
+                                        Toast.LENGTH_LONG
+                                ).show()
+                            } catch (wrongPassword: FirebaseAuthInvalidCredentialsException) {
+                                Toast.makeText(
+                                        this,
+                                        resources.getString(R.string.invalid_email_or_password),
+                                        Toast.LENGTH_LONG
+                                ).show()
+                            } catch (e: java.lang.Exception) {
+                                Toast.makeText(
+                                        this,
+                                        resources.getString(R.string.login_failed),
+                                        Toast.LENGTH_LONG
+                                ).show()
+                            }
+                        }
+                        it.complete()
                     }
                 }
             }
@@ -130,12 +136,18 @@ object AuthRepository {
     }
 
     fun signOut(mContext: Context, toActivity: Activity){
-        FirebaseAuth.getInstance().signOut()
-        LoginManager.getInstance().logOut()
-        mContext as Activity
-        mContext.run {
-            startActivity(Intent(this, toActivity::class.java))
-            this.finish()
+        job = Job()
+        job.let{
+            CoroutineScope(Dispatchers.IO+it).launch {
+                FirebaseAuth.getInstance().signOut()
+                LoginManager.getInstance().logOut()
+                mContext as Activity
+                mContext.run {
+                    startActivity(Intent(this, toActivity::class.java))
+                    this.finish()
+                    it.complete()
+                }
+            }
         }
     }
 }

@@ -18,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.honey_bear.honeybear_matchmaker.R
 import com.honey_bear.honeybear_matchmaker.view_model.AuthViewModel
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.coroutines.*
 import java.util.*
 
 class LoginActivity : AppCompatActivity() {
@@ -25,6 +26,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var callbackManager: CallbackManager
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
+    private lateinit var job: CompletableJob
     @SuppressLint("CommitPrefEdits")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,23 +50,29 @@ class LoginActivity : AppCompatActivity() {
     private fun initFacebook() {
         FacebookSdk.sdkInitialize(this@LoginActivity)
         callbackManager = CallbackManager.Factory.create()
-        buttonFacebookLogin.setOnClickListener {
-            LoginManager.getInstance().logInWithReadPermissions(
-                this@LoginActivity, listOf(
-                    "public_profile",
-                    "email"
-                )
-            )
-            LoginManager.getInstance().registerCallback(
-                callbackManager,
-                object : FacebookCallback<LoginResult> {
-                    override fun onSuccess(loginResult: LoginResult) {
-                        handlerFacebookAccessToken(loginResult.accessToken)
-                    }
+        job= Job()
+        buttonFacebookLogin.setOnClickListener { view->
+            job.let{
+                CoroutineScope(Dispatchers.IO+it).launch {
+                    LoginManager.getInstance().logInWithReadPermissions(
+                            this@LoginActivity, listOf(
+                            "public_profile",
+                            "email"
+                    )
+                    )
+                    LoginManager.getInstance().registerCallback(
+                            callbackManager,
+                            object : FacebookCallback<LoginResult> {
+                                override fun onSuccess(loginResult: LoginResult) {
+                                    handlerFacebookAccessToken(loginResult.accessToken)
+                                    it.complete()
+                                }
 
-                    override fun onCancel() {}
-                    override fun onError(error: FacebookException) {}
-                })
+                                override fun onCancel() {}
+                                override fun onError(error: FacebookException) {}
+                            })
+                }
+            }
         }
     }
 
